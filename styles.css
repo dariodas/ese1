@@ -77,5 +77,8 @@ body {
     .main-nav {
         flex: 1;
     }
+    .main-nav li {
+        list-style: none;
+    }
 }
 
