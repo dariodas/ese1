@@ -1,68 +1,80 @@
 /* Stili di base per la pagina */
 body {
     font-family: Arial, sans-serif;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
+
 /* Contenitore principale */
 .container {
     background-color: white;
     margin: 80px 60px;
     border: 3px darkslateblue solid;
-    display: block;
+    display: flex;
     flex-direction: row;
     overflow: hidden;
+    box-sizing: border-box;
 }
+
 /* Stile per il contenuto */
 .content {
     flex: 1;
     box-sizing: border-box;
-    display: inline-block;
     width: calc(100% - 300px);
-    vertical-align: top;
 }
 
+/* Sezioni all'interno del contenuto */
 .content section {
     border: 2px solid green;
     padding: 10px;
-    display: block;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
-/* Stili per il testo evidenziato */
+/* Evidenziare il testo */
 .highlight {
     display: inline-block;
-    border: blue 2px solid;
+    border: 2px solid blue;
     background: mediumspringgreen;
-    padding: 20px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 /* Stili per la barra di navigazione */
 .main-nav {
-    border: 3px orange solid;
-    margin: 0px 0px 100px 0px;
+    border: 3px solid orange;
     width: 300px;
-    float: left;
-    display: inline-block;
-    vertical-align: top;
+    margin-right: 20px;
+    background: linear-gradient(to right, orange, yellow);
+    padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Elementi della barra di navigazione */
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .main-nav li {
     padding: 12px 0;
+    color: #fff;
 }
 
 /* Stili per il footer */
 .main-footer {
     background-color: white;
-    border: 3px deepskyblue solid;
+    border-top: 3px solid deepskyblue;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
     left: 0;
-    clear: both;
-    display: block;
     box-sizing: border-box;
 }
 
@@ -70,15 +82,30 @@ body {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        margin: 10px;
+        padding: 10px;
     }
+
     .content {
-        flex: 6;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
     }
+
     .main-nav {
-        flex: 1;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        border: none;
     }
+
     .main-nav li {
         list-style: none;
+        padding: 10px;
+    }
+
+    .main-footer {
+        position: static;
+        margin-top: 20px;
     }
 }
-
